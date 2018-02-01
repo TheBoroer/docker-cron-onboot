@@ -5,6 +5,8 @@ MAINTAINER Boro <docker@bo.ro>
 RUN yum -y update
 RUN yum -y install crontabs nano git python MySQL-python
 
+ADD start.sh /start.sh
+
 # Fix: "TERM environment variable not set." error when entering the container with bash
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
 
