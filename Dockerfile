@@ -21,6 +21,6 @@ RUN chmod 0644 /etc/crontab
 
 ADD start.sh /start.sh
 RUN chmod 0777 /start.sh
-RUN sed -i -e 's/\r$//' scriptname.sh
+RUN sed -i -e 's/\r$//' /start.sh
 
 CMD /start.sh

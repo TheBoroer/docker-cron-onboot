@@ -9,6 +9,7 @@ echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 if [ ! -z "$GIT_EMAIL" ]; then
  git config --global user.email "$GIT_EMAIL"
 fi
+
 if [ ! -z "$GIT_NAME" ]; then
  git config --global user.name "$GIT_NAME"
  git config --global push.default simple
