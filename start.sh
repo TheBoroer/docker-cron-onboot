@@ -1,7 +1,5 @@
 #!/bin/bash
-
 #create /app if it doesn't exist
-
 
 # Disable Strict Host checking for non interactive git clones
 mkdir -p -m 0700 /root/.ssh
