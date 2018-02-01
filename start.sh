@@ -13,7 +13,7 @@ if [ ! -z "$GIT_NAME" ]; then
  git config --global user.name "$GIT_NAME"
  git config --global push.default simple
 fi
-d
+
 # Dont pull code down if the .git folder exists
 if [ ! -d "/app/.git" ]; then
  # Pull down code from git for our site!

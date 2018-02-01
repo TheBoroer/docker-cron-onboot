@@ -5,9 +5,6 @@ MAINTAINER Boro <docker@bo.ro>
 RUN yum -y update
 RUN yum -y install crontabs nano git python MySQL-python
 
-ADD start.sh /start.sh
-RUN chmod 0777 /start.sh
-
 # Fix: "TERM environment variable not set." error when entering the container with bash
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
 
@@ -21,5 +18,9 @@ RUN chmod 0644 /etc/crontab
 
 # Add crontab setting
 # # RUN echo '* * * * * root /path/to/your/command' >> /etc/crontab
+
+ADD start.sh /start.sh
+RUN chmod 0777 /start.sh
+RUN sed -i -e 's/\r$//' scriptname.sh
 
 CMD /start.sh
