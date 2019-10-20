@@ -1,11 +1,15 @@
-FROM centos:6
+FROM centos:7
 MAINTAINER Boro <docker@bo.ro>
 
 # install crontabs
 RUN yum -y update
-RUN yum -y install crontabs nano git python MySQL-python net-tools initscripts
+RUN yum -y install crontabs nano python MySQL-python net-tools initscripts
 
-# Fix: "TERM environment variable not set." error when entering the container with bash
+# install git v2
+RUN yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
+RUN yum -y install  git2u-all
+
+# fix: "TERM environment variable not set." error when entering the container with bash
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
 
 # change timezone to JST
