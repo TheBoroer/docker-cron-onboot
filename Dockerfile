@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:6
 MAINTAINER Boro <docker@bo.ro>
 
 # install crontabs
