@@ -46,5 +46,5 @@ else
 fi
 
 # Start edit crontab and start crond 
-echo "@reboot root /app/${COMMAND}" > /etc/crontab
+echo "@reboot root ${COMMAND}" > /etc/crontab
 crond && tail -f /dev/null;
