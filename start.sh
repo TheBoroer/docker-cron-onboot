@@ -45,6 +45,12 @@ else
  fi
 fi
 
-# Start edit crontab and start crond 
+# Save all set ENV vars to /etc/environment so that cronjobs have access to the same variables
+# More info: https://stackoverflow.com/a/41938139
+printenv | grep -v "no_proxy" >> /etc/environment
+
+# Add onboot/reboot command to crontab 
 echo "@reboot root ${COMMAND}" > /etc/crontab
-crond && tail -f /dev/null;
+
+# Start crond in foreground
+crond -n;
