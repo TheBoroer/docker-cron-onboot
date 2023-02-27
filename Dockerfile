@@ -3,7 +3,10 @@ MAINTAINER Boro <docker@bo.ro>
 
 # install crontabs
 RUN yum -y update
-RUN yum -y install crontabs nano python3 MySQL-python net-tools initscripts git2u-all
+RUN yum -y install crontabs nano python3 python3-devel mysql-devel gcc net-tools initscripts git2u-all
+
+# install mysql client
+RUN pip3 install mysqlclient
 
 # fix: "TERM environment variable not set." error when entering the container with bash
 RUN echo "export TERM=xterm" >> /etc/bash.bashrc
