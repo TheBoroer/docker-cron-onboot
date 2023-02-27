@@ -3,7 +3,7 @@ MAINTAINER Boro <docker@bo.ro>
 
 # install crontabs
 RUN yum -y update
-RUN yum -y install crontabs nano python MySQL-python net-tools initscripts
+RUN yum -y install crontabs nano python3 MySQL-python net-tools initscripts
 
 # install git v2
 RUN yum -y install  https://centos7.iuscommunity.org/ius-release.rpm
